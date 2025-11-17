@@ -70,16 +70,14 @@ import { VehicleGarageCreatePage } from "@/pages/VehicleGarageCreate";
 // Vehicle Assignments
 import { VehicleAssignmentsPage } from "@/pages/VehicleAssignments";
 import { VehicleAssignmentCreatePage } from "@/pages/VehicleAssignmentCreate";
-// Optional view/edit when implemented
-// import { VehicleAssignmentViewPage } from "@/pages/VehicleAssignmentView";
-// import { VehicleAssignmentEditPage } from "@/pages/VehicleAssignmentEdit";
+import { VehicleAssignmentViewPage } from "@/pages/VehicleAssignmentView";
+import { VehicleAssignmentEditPage } from "@/pages/VehicleAssignmentEdit";
 
 // Vehicle Services
 import { VehicleServicesPage } from "@/pages/VehicleServices";
 import { VehicleServiceCreatePage } from "@/pages/VehicleServiceCreate";
-// Optional view/edit when implemented
-// import { VehicleServiceViewPage } from "@/pages/VehicleServiceView";
-// import { VehicleServiceEditPage } from "@/pages/VehicleServiceEdit";
+import { VehicleServiceViewPage } from "@/pages/VehicleServiceView";
+import { VehicleServiceEditPage } from "@/pages/VehicleServiceEdit";
 
 // (Optional) Login page
 // import { LoginPage } from "@/pages/Login";
@@ -223,7 +221,6 @@ export default function App() {
                 path="warehouses/create"
                 element={<WarehouseCreatePage />}
               />
-              {/* Optionally add view/edit */}
 
               {/* Categories */}
               <Route path="categories" element={<CategoriesPage />} />
@@ -231,7 +228,6 @@ export default function App() {
                 path="categories/create"
                 element={<CategoryCreatePage />}
               />
-              {/* Optionally add view/edit */}
 
               {/* Vehicles */}
               <Route path="vehicles" element={<VehiclesPage />} />
@@ -265,9 +261,14 @@ export default function App() {
                 path="vehicle-assignments/create"
                 element={<VehicleAssignmentCreatePage />}
               />
-              {/* Optional view/edit */}
-              {/* <Route path="vehicle-assignments/view/:id" element={<VehicleAssignmentViewPage />} /> */}
-              {/* <Route path="vehicle-assignments/edit/:id" element={<VehicleAssignmentEditPage />} /> */}
+              <Route
+                path="vehicle-assignments/view/:id"
+                element={<VehicleAssignmentViewPage />}
+              />
+              <Route
+                path="vehicle-assignments/edit/:id"
+                element={<VehicleAssignmentEditPage />}
+              />
 
               {/* Vehicle Services */}
               <Route
@@ -278,9 +279,14 @@ export default function App() {
                 path="vehicle-services/create"
                 element={<VehicleServiceCreatePage />}
               />
-              {/* Optional view/edit */}
-              {/* <Route path="vehicle-services/view/:id" element={<VehicleServiceViewPage />} /> */}
-              {/* <Route path="vehicle-services/edit/:id" element={<VehicleServiceEditPage />} /> */}
+              <Route
+                path="vehicle-services/view/:id"
+                element={<VehicleServiceViewPage />}
+              />
+              <Route
+                path="vehicle-services/edit/:id"
+                element={<VehicleServiceEditPage />}
+              />
 
               {/* Fallback */}
               <Route path="*" element={<Navigate to="/dashboard" replace />} />
