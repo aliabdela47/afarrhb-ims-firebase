@@ -77,6 +77,12 @@ import { VehicleServiceEditPage } from "@/pages/VehicleServiceEdit";
 import { GeofencesPage } from "@/pages/Geofences";
 import { GeofenceCreatePage } from "@/pages/GeofenceCreate";
 
+// Vehicle Tracking
+import { VehicleTrackingPage } from "@/pages/VehicleTracking";
+
+// Vehicle Map
+import { VehicleMapPage } from "@/pages/VehicleMap";
+
 // (Optional) Login page
 // import { LoginPage } from "@/pages/Login";
 
@@ -233,8 +239,75 @@ export default function App() {
                 path="vehicles/create"
                 element={<VehicleCreatePage />}
               />
-              {/* Optional view/edit */}
-              {/* <Route path="vehicles/view/:id" element={<VehicleViewPage />} /> */}
-              {/* <Route path="vehicles/edit/:id" element={<VehicleEditPage />} /> */}
 
-v
+              {/* Vehicle Garages */}
+              <Route
+                path="vehicle-garages"
+                element={<VehicleGaragesPage />}
+              />
+              <Route
+                path="vehicle-garages/create"
+                element={<VehicleGarageCreatePage />}
+              />
+
+              {/* Vehicle Assignments */}
+              <Route
+                path="vehicle-assignments"
+                element={<VehicleAssignmentsPage />}
+              />
+              <Route
+                path="vehicle-assignments/create"
+                element={<VehicleAssignmentCreatePage />}
+              />
+              <Route
+                path="vehicle-assignments/view/:id"
+                element={<VehicleAssignmentViewPage />}
+              />
+              <Route
+                path="vehicle-assignments/edit/:id"
+                element={<VehicleAssignmentEditPage />}
+              />
+
+              {/* Vehicle Services */}
+              <Route
+                path="vehicle-services"
+                element={<VehicleServicesPage />}
+              />
+              <Route
+                path="vehicle-services/create"
+                element={<VehicleServiceCreatePage />}
+              />
+              <Route
+                path="vehicle-services/view/:id"
+                element={<VehicleServiceViewPage />}
+              />
+              <Route
+                path="vehicle-services/edit/:id"
+                element={<VehicleServiceEditPage />}
+              />
+
+              {/* Geofences */}
+              <Route path="geofences" element={<GeofencesPage />} />
+              <Route
+                path="geofences/create"
+                element={<GeofenceCreatePage />}
+              />
+
+              {/* Vehicle Tracking */}
+              <Route
+                path="vehicle-tracking"
+                element={<VehicleTrackingPage />}
+              />
+
+              {/* Vehicle Map */}
+              <Route path="vehicle-map" element={<VehicleMapPage />} />
+
+              {/* Fallback */}
+              <Route path="*" element={<Navigate to="/dashboard" replace />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
+    </QueryClientProvider>
+  );
+}
