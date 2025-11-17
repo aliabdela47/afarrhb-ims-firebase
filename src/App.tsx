@@ -84,6 +84,9 @@ import { VehicleMapPage } from "@/pages/VehicleMap";
 // Vehicle Alerts
 import { VehicleAlertsPage } from "@/pages/VehicleAlerts";
 
+// Audit Logs (Phase 4)
+import { AuditLogsPage } from "@/pages/AuditLogs";
+
 // (Optional) Login page
 // import { LoginPage } from "@/pages/Login";
 
@@ -307,6 +310,12 @@ export default function App() {
               <Route
                 path="vehicle-alerts"
                 element={<VehicleAlertsPage />}
+              />
+
+              {/* Audit Logs (Phase 4) */}
+              <Route
+                path="audit-logs"
+                element={<AuditLogsPage />}
               />
 
               {/* Fallback */}
