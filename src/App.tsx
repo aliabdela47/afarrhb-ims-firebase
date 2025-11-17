@@ -77,11 +77,12 @@ import { VehicleServiceEditPage } from "@/pages/VehicleServiceEdit";
 import { GeofencesPage } from "@/pages/Geofences";
 import { GeofenceCreatePage } from "@/pages/GeofenceCreate";
 
-// Vehicle Tracking
+// Vehicle Tracking & Map
 import { VehicleTrackingPage } from "@/pages/VehicleTracking";
-
-// Vehicle Map
 import { VehicleMapPage } from "@/pages/VehicleMap";
+
+// Vehicle Alerts
+import { VehicleAlertsPage } from "@/pages/VehicleAlerts";
 
 // (Optional) Login page
 // import { LoginPage } from "@/pages/Login";
@@ -301,6 +302,12 @@ export default function App() {
 
               {/* Vehicle Map */}
               <Route path="vehicle-map" element={<VehicleMapPage />} />
+
+              {/* Vehicle Alerts */}
+              <Route
+                path="vehicle-alerts"
+                element={<VehicleAlertsPage />}
+              />
 
               {/* Fallback */}
               <Route path="*" element={<Navigate to="/dashboard" replace />} />
