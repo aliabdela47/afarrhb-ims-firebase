@@ -27,7 +27,19 @@ import { IssuancesPage } from "@/pages/Issuances";
 import { IssuanceCreatePage } from "@/pages/IssuanceCreate";
 import { IssuanceViewPage } from "@/pages/IssuanceView";
 
-// (Optional) Login page if you have it
+// Employees
+import { EmployeesPage } from "@/pages/Employees";
+import { EmployeeCreatePage } from "@/pages/EmployeeCreate";
+import { EmployeeViewPage } from "@/pages/EmployeeView";
+import { EmployeeEditPage } from "@/pages/EmployeeEdit";
+
+// Directorates
+import { DirectoratesPage } from "@/pages/Directorates";
+import { DirectorateCreatePage } from "@/pages/DirectorateCreate";
+import { DirectorateViewPage } from "@/pages/DirectorateView";
+import { DirectorateEditPage } from "@/pages/DirectorateEdit";
+
+// (Optional) Login page
 // import { LoginPage } from "@/pages/Login";
 
 const queryClient = new QueryClient();
@@ -77,10 +89,10 @@ export default function App() {
       <AuthProvider>
         <BrowserRouter>
           <Routes>
-            {/* Public routes like login */}
+            {/* Public routes */}
             {/* <Route path="/login" element={<LoginPage />} /> */}
 
-            {/* Protected application routes */}
+            {/* Protected app */}
             <Route
               path="/"
               element={
@@ -115,7 +127,40 @@ export default function App() {
                 element={<IssuanceViewPage />}
               />
 
-              {/* Fallback to dashboard */}
+              {/* Employees */}
+              <Route path="employees" element={<EmployeesPage />} />
+              <Route
+                path="employees/create"
+                element={<EmployeeCreatePage />}
+              />
+              <Route
+                path="employees/view/:id"
+                element={<EmployeeViewPage />}
+              />
+              <Route
+                path="employees/edit/:id"
+                element={<EmployeeEditPage />}
+              />
+
+              {/* Directorates */}
+              <Route
+                path="directorates"
+                element={<DirectoratesPage />}
+              />
+              <Route
+                path="directorates/create"
+                element={<DirectorateCreatePage />}
+              />
+              <Route
+                path="directorates/view/:id"
+                element={<DirectorateViewPage />}
+              />
+              <Route
+                path="directorates/edit/:id"
+                element={<DirectorateEditPage />}
+              />
+
+              {/* Fallback */}
               <Route path="*" element={<Navigate to="/dashboard" replace />} />
             </Route>
           </Routes>
