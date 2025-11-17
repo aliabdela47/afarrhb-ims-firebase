@@ -48,18 +48,26 @@ import { CustomerEditPage } from "@/pages/CustomerEdit";
 // Warehouses
 import { WarehousesPage } from "@/pages/Warehouses";
 import { WarehouseCreatePage } from "@/pages/WarehouseCreate";
+import { WarehouseViewPage } from "@/pages/WarehouseView";
+import { WarehouseEditPage } from "@/pages/WarehouseEdit";
 
 // Categories
 import { CategoriesPage } from "@/pages/Categories";
 import { CategoryCreatePage } from "@/pages/CategoryCreate";
+import { CategoryViewPage } from "@/pages/CategoryView";
+import { CategoryEditPage } from "@/pages/CategoryEdit";
 
 // Vehicles
 import { VehiclesPage } from "@/pages/Vehicles";
 import { VehicleCreatePage } from "@/pages/VehicleCreate";
+import { VehicleViewPage } from "@/pages/VehicleView";
+import { VehicleEditPage } from "@/pages/VehicleEdit";
 
 // Vehicle Garages
 import { VehicleGaragesPage } from "@/pages/VehicleGarages";
 import { VehicleGarageCreatePage } from "@/pages/VehicleGarageCreate";
+import { VehicleGarageViewPage } from "@/pages/VehicleGarageView";
+import { VehicleGarageEditPage } from "@/pages/VehicleGarageEdit";
 
 // Vehicle Assignments
 import { VehicleAssignmentsPage } from "@/pages/VehicleAssignments";
@@ -76,6 +84,7 @@ import { VehicleServiceEditPage } from "@/pages/VehicleServiceEdit";
 // Geofences
 import { GeofencesPage } from "@/pages/Geofences";
 import { GeofenceCreatePage } from "@/pages/GeofenceCreate";
+import { GeofenceViewPage } from "@/pages/GeofenceView";
 
 // Vehicle Tracking & Map
 import { VehicleTrackingPage } from "@/pages/VehicleTracking";
@@ -84,7 +93,7 @@ import { VehicleMapPage } from "@/pages/VehicleMap";
 // Vehicle Alerts
 import { VehicleAlertsPage } from "@/pages/VehicleAlerts";
 
-// Audit Logs (Phase 4)
+// Audit Logs
 import { AuditLogsPage } from "@/pages/AuditLogs";
 
 // (Optional) Login page
@@ -229,6 +238,14 @@ export default function App() {
                 path="warehouses/create"
                 element={<WarehouseCreatePage />}
               />
+              <Route
+                path="warehouses/view/:id"
+                element={<WarehouseViewPage />}
+              />
+              <Route
+                path="warehouses/edit/:id"
+                element={<WarehouseEditPage />}
+              />
 
               {/* Categories */}
               <Route path="categories" element={<CategoriesPage />} />
@@ -236,12 +253,28 @@ export default function App() {
                 path="categories/create"
                 element={<CategoryCreatePage />}
               />
+              <Route
+                path="categories/view/:id"
+                element={<CategoryViewPage />}
+              />
+              <Route
+                path="categories/edit/:id"
+                element={<CategoryEditPage />}
+              />
 
               {/* Vehicles */}
               <Route path="vehicles" element={<VehiclesPage />} />
               <Route
                 path="vehicles/create"
                 element={<VehicleCreatePage />}
+              />
+              <Route
+                path="vehicles/view/:id"
+                element={<VehicleViewPage />}
+              />
+              <Route
+                path="vehicles/edit/:id"
+                element={<VehicleEditPage />}
               />
 
               {/* Vehicle Garages */}
@@ -252,6 +285,14 @@ export default function App() {
               <Route
                 path="vehicle-garages/create"
                 element={<VehicleGarageCreatePage />}
+              />
+              <Route
+                path="vehicle-garages/view/:id"
+                element={<VehicleGarageViewPage />}
+              />
+              <Route
+                path="vehicle-garages/edit/:id"
+                element={<VehicleGarageEditPage />}
               />
 
               {/* Vehicle Assignments */}
@@ -296,6 +337,11 @@ export default function App() {
                 path="geofences/create"
                 element={<GeofenceCreatePage />}
               />
+              <Route
+                path="geofences/view/:id"
+                element={<GeofenceViewPage />}
+              />
+              {/* edit is already handled by GeofenceCreatePage with an id param, if you choose */}
 
               {/* Vehicle Tracking */}
               <Route
@@ -312,7 +358,7 @@ export default function App() {
                 element={<VehicleAlertsPage />}
               />
 
-              {/* Audit Logs (Phase 4) */}
+              {/* Audit Logs */}
               <Route
                 path="audit-logs"
                 element={<AuditLogsPage />}
