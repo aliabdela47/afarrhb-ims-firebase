@@ -53,6 +53,14 @@ import { WarehouseCreatePage } from "@/pages/WarehouseCreate";
 import { CategoriesPage } from "@/pages/Categories";
 import { CategoryCreatePage } from "@/pages/CategoryCreate";
 
+// Vehicles
+import { VehiclesPage } from "@/pages/Vehicles";
+import { VehicleCreatePage } from "@/pages/VehicleCreate";
+
+// Vehicle Garages
+import { VehicleGaragesPage } from "@/pages/VehicleGarages";
+import { VehicleGarageCreatePage } from "@/pages/VehicleGarageCreate";
+
 // (Optional) Login page
 // import { LoginPage } from "@/pages/Login";
 
@@ -204,6 +212,29 @@ export default function App() {
                 element={<CategoryCreatePage />}
               />
               {/* Optionally add view/edit */}
+
+              {/* Vehicles */}
+              <Route path="vehicles" element={<VehiclesPage />} />
+              <Route
+                path="vehicles/create"
+                element={<VehicleCreatePage />}
+              />
+              {/* Optional view/edit */}
+              {/* <Route path="vehicles/view/:id" element={<VehicleViewPage />} /> */}
+              {/* <Route path="vehicles/edit/:id" element={<VehicleEditPage />} /> */}
+
+              {/* Vehicle Garages */}
+              <Route
+                path="vehicle-garages"
+                element={<VehicleGaragesPage />}
+              />
+              <Route
+                path="vehicle-garages/create"
+                element={<VehicleGarageCreatePage />}
+              />
+              {/* Optional view/edit */}
+              {/* <Route path="vehicle-garages/view/:id" element={<VehicleGarageViewPage />} /> */}
+              {/* <Route path="vehicle-garages/edit/:id" element={<VehicleGarageEditPage />} /> */}
 
               {/* Fallback */}
               <Route path="*" element={<Navigate to="/dashboard" replace />} />
