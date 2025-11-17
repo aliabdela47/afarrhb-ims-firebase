@@ -39,6 +39,20 @@ import { DirectorateCreatePage } from "@/pages/DirectorateCreate";
 import { DirectorateViewPage } from "@/pages/DirectorateView";
 import { DirectorateEditPage } from "@/pages/DirectorateEdit";
 
+// Customers
+import { CustomersPage } from "@/pages/Customers";
+import { CustomerCreatePage } from "@/pages/CustomerCreate";
+import { CustomerViewPage } from "@/pages/CustomerView";
+import { CustomerEditPage } from "@/pages/CustomerEdit";
+
+// Warehouses
+import { WarehousesPage } from "@/pages/Warehouses";
+import { WarehouseCreatePage } from "@/pages/WarehouseCreate";
+
+// Categories
+import { CategoriesPage } from "@/pages/Categories";
+import { CategoryCreatePage } from "@/pages/CategoryCreate";
+
 // (Optional) Login page
 // import { LoginPage } from "@/pages/Login";
 
@@ -159,6 +173,37 @@ export default function App() {
                 path="directorates/edit/:id"
                 element={<DirectorateEditPage />}
               />
+
+              {/* Customers */}
+              <Route path="customers" element={<CustomersPage />} />
+              <Route
+                path="customers/create"
+                element={<CustomerCreatePage />}
+              />
+              <Route
+                path="customers/view/:id"
+                element={<CustomerViewPage />}
+              />
+              <Route
+                path="customers/edit/:id"
+                element={<CustomerEditPage />}
+              />
+
+              {/* Warehouses */}
+              <Route path="warehouses" element={<WarehousesPage />} />
+              <Route
+                path="warehouses/create"
+                element={<WarehouseCreatePage />}
+              />
+              {/* Optionally add view/edit similar to customers */}
+
+              {/* Categories */}
+              <Route path="categories" element={<CategoriesPage />} />
+              <Route
+                path="categories/create"
+                element={<CategoryCreatePage />}
+              />
+              {/* Optionally add view/edit */}
 
               {/* Fallback */}
               <Route path="*" element={<Navigate to="/dashboard" replace />} />
