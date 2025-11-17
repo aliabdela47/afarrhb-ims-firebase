@@ -56,16 +56,10 @@ import { CategoryCreatePage } from "@/pages/CategoryCreate";
 // Vehicles
 import { VehiclesPage } from "@/pages/Vehicles";
 import { VehicleCreatePage } from "@/pages/VehicleCreate";
-// Optional view/edit when implemented
-// import { VehicleViewPage } from "@/pages/VehicleView";
-// import { VehicleEditPage } from "@/pages/VehicleEdit";
 
 // Vehicle Garages
 import { VehicleGaragesPage } from "@/pages/VehicleGarages";
 import { VehicleGarageCreatePage } from "@/pages/VehicleGarageCreate";
-// Optional view/edit when implemented
-// import { VehicleGarageViewPage } from "@/pages/VehicleGarageView";
-// import { VehicleGarageEditPage } from "@/pages/VehicleGarageEdit";
 
 // Vehicle Assignments
 import { VehicleAssignmentsPage } from "@/pages/VehicleAssignments";
@@ -78,6 +72,10 @@ import { VehicleServicesPage } from "@/pages/VehicleServices";
 import { VehicleServiceCreatePage } from "@/pages/VehicleServiceCreate";
 import { VehicleServiceViewPage } from "@/pages/VehicleServiceView";
 import { VehicleServiceEditPage } from "@/pages/VehicleServiceEdit";
+
+// Geofences
+import { GeofencesPage } from "@/pages/Geofences";
+import { GeofenceCreatePage } from "@/pages/GeofenceCreate";
 
 // (Optional) Login page
 // import { LoginPage } from "@/pages/Login";
@@ -287,6 +285,17 @@ export default function App() {
                 path="vehicle-services/edit/:id"
                 element={<VehicleServiceEditPage />}
               />
+
+              {/* Geofences */}
+              <Route path="geofences" element={<GeofencesPage />} />
+              <Route
+                path="geofences/create"
+                element={<GeofenceCreatePage />}
+              />
+              {/* optional view/edit if split:
+              <Route path="geofences/view/:id" element={<GeofenceViewPage />} />
+              <Route path="geofences/edit/:id" element={<GeofenceCreatePage />} />
+              */}
 
               {/* Fallback */}
               <Route path="*" element={<Navigate to="/dashboard" replace />} />
