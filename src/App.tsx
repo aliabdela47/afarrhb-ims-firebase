@@ -8,15 +8,27 @@ import {
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Layout } from "@/components/Layout";
 import DashboardPage from "@/pages/Dashboard";
-
-// NEW: import Items pages
-import { ItemsPage as Items } from "@/pages/Items";
-import { ItemCreatePage as ItemCreate } from "@/pages/ItemCreate";
-import { ItemViewPage as ItemView } from "@/pages/ItemView";
-import { ItemEditPage as ItemEdit } from "@/pages/ItemEdit";
-
 import { onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "@/lib/firebase";
+
+// Items pages
+import { ItemsPage } from "@/pages/Items";
+import { ItemCreatePage } from "@/pages/ItemCreate";
+import { ItemViewPage } from "@/pages/ItemView";
+import { ItemEditPage } from "@/pages/ItemEdit";
+
+// Requests pages
+import { RequestsPage } from "@/pages/Requests";
+import { RequestCreatePage } from "@/pages/RequestCreate";
+import { RequestViewPage } from "@/pages/RequestView";
+
+// Issuances pages
+import { IssuancesPage } from "@/pages/Issuances";
+import { IssuanceCreatePage } from "@/pages/IssuanceCreate";
+import { IssuanceViewPage } from "@/pages/IssuanceView";
+
+// (Optional) Login page if you have it
+// import { LoginPage } from "@/pages/Login";
 
 const queryClient = new QueryClient();
 
@@ -65,28 +77,46 @@ export default function App() {
       <AuthProvider>
         <BrowserRouter>
           <Routes>
-            {/* Public routes like login can go here */}
+            {/* Public routes like login */}
             {/* <Route path="/login" element={<LoginPage />} /> */}
 
-            {/* Protected app routes */}
+            {/* Protected application routes */}
             <Route
-              path="/*"
+              path="/"
               element={
                 <ProtectedRoute>
                   <Layout />
                 </ProtectedRoute>
               }
             >
+              {/* Dashboard */}
               <Route index element={<DashboardPage />} />
               <Route path="dashboard" element={<DashboardPage />} />
 
-              {/* NEW: Items routes */}
-              <Route path="items" element={<Items />} />
-              <Route path="items/create" element={<ItemCreate />} />
-              <Route path="items/view/:id" element={<ItemView />} />
-              <Route path="items/edit/:id" element={<ItemEdit />} />
+              {/* Items */}
+              <Route path="items" element={<ItemsPage />} />
+              <Route path="items/create" element={<ItemCreatePage />} />
+              <Route path="items/view/:id" element={<ItemViewPage />} />
+              <Route path="items/edit/:id" element={<ItemEditPage />} />
 
-              {/* other routes (requests, issuances, etc.) remain here */}
+              {/* Requests */}
+              <Route path="requests" element={<RequestsPage />} />
+              <Route path="requests/create" element={<RequestCreatePage />} />
+              <Route path="requests/view/:id" element={<RequestViewPage />} />
+
+              {/* Issuances */}
+              <Route path="issuances" element={<IssuancesPage />} />
+              <Route
+                path="issuances/create"
+                element={<IssuanceCreatePage />}
+              />
+              <Route
+                path="issuances/view/:id"
+                element={<IssuanceViewPage />}
+              />
+
+              {/* Fallback to dashboard */}
+              <Route path="*" element={<Navigate to="/dashboard" replace />} />
             </Route>
           </Routes>
         </BrowserRouter>
